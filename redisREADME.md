@@ -36,14 +36,14 @@ REDIS_URL=redis://localhost:6379
 ## Step 3: src/config/redis.js banao
 
 ```js
-const { Redis } = require('ioredis');
+const Redis = require('ioredis');
+const redisClient = new Redis(process.env.REDIS_URL);
 
-const redis = new Redis(process.env.REDIS_URL);
+redisClient.on('connect', () => console.log('Redis Connected'));
+redisClient.on('error', (err) => console.error('Redis Error:', err));
 
-redis.on('connect', () => console.log('Redis Connected'));
-redis.on('error', (err) => console.error('Redis Error:', err));
+module.exports = redisClient;
 
-module.exports = redis;
 ```
 
 ---
