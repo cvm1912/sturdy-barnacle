@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "bullmq": "^5.77.6",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "ioredis": "^5.11.0",
+    "mongoose": "^9.6.2",
+    "multer": "^2.1.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "name": "sturdy-barnacle",
+  "version": "1.0.0",
+  "description": "- Node.js\r - Express.js\r - Baileys (WhatsApp Web API)\r - MongoDB\r - BullMQ\r - Multer\r - XLSX",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cvm1912/sturdy-barnacle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cvm1912/sturdy-barnacle/issues"
+  },
+  "homepage": "https://github.com/cvm1912/sturdy-barnacle#readme"
+}
