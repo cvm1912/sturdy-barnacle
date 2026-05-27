@@ -17,9 +17,9 @@
   "description": "- Node.js\r - Express.js\r - Baileys (WhatsApp Web API)\r - MongoDB\r - BullMQ\r - Multer\r - XLSX",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.js"
-  },
+    "dev": "nodemon src/server.js"
+},
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cvm1912/sturdy-barnacle.git"
