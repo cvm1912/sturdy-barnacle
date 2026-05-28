@@ -18,7 +18,7 @@ const documentFilter = (req, file, cb) => {
     else cb(new Error('Invalid file type'));
 };
 
-const uploadExcel = multer({ storage: storage('excel'), fileFilter: excelFilter });
+const uploadExcel = multer({ storage: multer.memoryStorage(), fileFilter: excelFilter });
 const uploadDocument = multer({ storage: storage('documents'), fileFilter: documentFilter });
 
 module.exports = { uploadExcel, uploadDocument };
