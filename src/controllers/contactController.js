@@ -13,12 +13,13 @@ const uploadContacts = async (req, res) => {
             name: row['name'],
             phone: '91' + String(row['phone'] || row['phone '] || '').trim().replace(/\s+/g, ''),
             role: row['role']
-        })).filter(c => c.name && c.phone);
+        })).filter(c => c.name && c.phone && c.role);
 
-        await Contact.insertMany(contacts, { ordered: false }).catch(() => {});
+        if (!contacts.length) return res.status(400).json({ message: 'No valid contacts found in file' });
 
-        const saved = await Contact.find({ phone: { $in: contacts.map(c => c.phone) } });
-        res.status(201).json({ message: 'Contacts uploaded', count: saved.length });
+        const result = await Contact.insertMany(contacts, { ordered: false }).catch(err => err.result || { insertedCount: 0 });
+
+        res.status(201).json({ message: 'Contacts uploaded', inserted: result.insertedCount, total: contacts.length });
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
