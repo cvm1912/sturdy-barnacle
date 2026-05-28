@@ -4,10 +4,10 @@ const Message = require('../models/Message');
 const { sendMessage } = require('../services/whatsappService');
 
 const worker = new Worker('messageQueue', async (job) => {
-    const { phone, message, document, messageId } = job.data;
+    const { phone, message, document, sessionId, messageId } = job.data;
 
     try {
-        await sendMessage(phone, message, document);
+        await sendMessage(sessionId, phone, message, document);
         await Message.findByIdAndUpdate(messageId, { status: 'sent' });
     } catch (err) {
         console.error(`Failed to send to ${phone}:`, err.message);

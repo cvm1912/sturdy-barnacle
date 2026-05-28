@@ -19,7 +19,7 @@
   "description": "- Node.js\r - Express.js\r - Baileys (WhatsApp Web API)\r - MongoDB\r - BullMQ\r - Multer\r - XLSX",
   "main": "src/app.js",
   "scripts": {
-    "dev": "nodemon --ignore src/config/auth_info_baileys/ --ignore src/uploads/ src/server.js"
+    "dev": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",

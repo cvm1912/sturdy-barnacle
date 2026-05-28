@@ -6,6 +6,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/contacts', require('./routes/contactRoutes'));
 app.use('/api/messages', require('./routes/messageRoutes'));
+app.use('/api/sessions', require('./routes/sessionRoutes'));
 
 app.get('/', (req, res) => {
     res.send('WhatsApp Sender Backend Running');
