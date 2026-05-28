@@ -35,6 +35,11 @@ src/
 └── server.js
 
 # steps 
-server.js
-app.js
-
+- server.js
+- app.js
+- redis.js
+- models (contact and message)
+- BullMQ
+- Routes + controller added
+- middleware added 
+- services 
